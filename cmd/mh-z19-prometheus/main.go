@@ -56,6 +56,7 @@ func takeReading() {
 	concentration, err := z19.TakeReading(conn)
 	if err != nil {
 		log.Println(err)
+		return
 	}
 	now := time.Now()
 	metricsLock.Lock()
