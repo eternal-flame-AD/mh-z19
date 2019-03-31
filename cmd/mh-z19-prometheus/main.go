@@ -43,6 +43,7 @@ func init() {
 	metricAddr = *m
 
 	connConfig := z19.CreateSerialConfig()
+	connConfig.ReadTimeout = 3 * time.Second
 	connConfig.Name = *dev
 
 	connSerial, err := serial.OpenPort(connConfig)
